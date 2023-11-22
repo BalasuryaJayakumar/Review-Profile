@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;1,6..12,300&display=swap');
+
+/* ||RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button, form, textarea {
+    font: inherit;
+}
+
+
+/* ||UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/* ||VARIABLES */
+
+:root {
+    --PARA-COLOR: #333;
+    --MAIN-BGCOLOR: whitesmoke;
+    --BODY-BGCOLOR: rgb(219, 229, 233);
+    --SPECIAL-COLOR: rgb(80, 186, 228);
+    --COLOR: #000;
+    --BTN-COLOR: rgb(80, 186, 228);
+    --BTN-BGCOLOR: whitesmoke;
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --PARA-COLOR: #000;
+        --MAIN-BGCOLOR: #706d6d;
+        --BODY-BGCOLOR: #3b3939;
+        --COLOR: whitesmoke;
+        --BTN-COLOR: #000;
+        --BTN-BGCOLOR: #706d6d;
+    }
+}
+
+/* ||GENERAL STYLES */
+
+html, body {
+    font-size: clamp (1rem, 2.2vh, 1.5rem);
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--BODY-BGCOLOR);
+    color: var(--COLOR);
+}
+
+.header {
+    /* position: sticky; */
+    top: 0;
+    z-index: 1;
+    margin: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bolder;
+}
+
+.header_h1 {
+    letter-spacing: 0.1em;
+}
+
+.header_ul {
+    background-color: var(--SPECIAL-COLOR);
+    height: 3px;
+    width: 60px;
+    border-radius: 3px;
+}
+
+.main {
+    background-color: var(--MAIN-BGCOLOR);
+    box-shadow: 3px 3px 10px var(--PARA-COLOR);
+    width: 400px;
+    margin: 1.5rem auto;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75em;
+    gap: 0.15rem;
+    position: relative;
+}
+
+.profile_img {
+    border-radius: 50%;
+    margin: 0.75rem auto; 
+    position: relative; 
+    top: 0;
+}
+
+.profile_bg {
+    width: 100px;
+    height: 100px;
+    background-color: var(--SPECIAL-COLOR);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 33%;
+    margin: 1.3rem 0;
+    
+}
+
+.profile_quote {
+    width: 25px;
+    height: 25x;
+    background-color: var(--SPECIAL-COLOR);
+    font-size: 10px;
+    padding: 0.2em;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    left: 30%;
+    margin: auto;
+    z-index: 1;
+}
+
+.profile_name {
+    letter-spacing: 0.15em;
+}
+
+.profile_role {
+    color: var(--SPECIAL-COLOR);
+}
+
+.lorem_para {
+    text-align: center;
+    color: var(--PARA-COLOR);
+}
+
+.div_link {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 0.25rem;
+}
+
+.link_page {
+    text-decoration: none;
+    font-size: clamp(1.5rem, 3.0vh, 1.75rem);
+}
+
+.btns {
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: var(--BTN-COLOR);
+    border: none;
+    margin: 0 0.5rem;
+}
+
+.randbtn {
+    padding: 0.2em 0.5em;
+    border: 1px solid var(--BTN-COLOR);
+    color: var(--BTN-COLOR);
+    border-radius: 10px;
+    background-color: var(--BTN-BGCOLOR);
+}
+
+.randbtn:active, .btns:active {
+    background-color: var(--BTN-COLOR);
+    color: var(--MAIN-BGCOLOR);
+    box-shadow: none;
+}
+
+.randbtn:hover, .randbtn:focus-visible, .btns:hover, .btns:focus-visible {
+    box-shadow: 2px 2px 8px var(--BTN-COLOR);
+}
+
+
+@media screen and (min-width: 375px){
+    .main {
+        width: 300px;
+    }
+
+    .profile_bg {
+        position: absolute;
+        top: 0;
+        left: 105px;
+    }
+    .profile_quote {
+        position: absolute;
+        top: 40px;
+        left: 31%;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .main {
+        width: 400px;
+    }
+    .profile_bg {
+        position: absolute;
+        top: 0;
+        left: 155px;
+    }
+    .profile_quote {
+        position: absolute;
+        top: 40px;
+        left: 35%;
+    }
+}
